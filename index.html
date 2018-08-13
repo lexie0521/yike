@@ -6,11 +6,14 @@
 	<title>豆瓣一刻</title>
 	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
 	<link rel="stylesheet" href="./public/less/main.css">
+	<script type="text/javascript" src="bower_components/angular/angular.js"></script>
+  <script type="text/javascript" src="./scripts/app.js"></script>
 </head>
-<body>
+<body ng-app="yike">
 	<div class="viewport">
 		<!-- 侧边导航 -->
-		<div class="navs">
+		<!-- <div class="navs" ng-class="{collapse:left}"> -->
+		<div ng-class="{navs:true,collapse:left}">  <!--简化 -->
 			<dl>
 				<dt class="login">
 					<div class="avatar">
@@ -56,13 +59,15 @@
 		</div>
 		<div class="container">
 			<!-- 头部 -->
-			<div class="header">
-				<a href="javascript:;" class="menu icon-menu"></a>
+			<!-- <div class="header" ng-class="{collapse:left}"> -->
+			<div ng-class="{header:true,collapse:left}">
+				<a href="javascript:;" class="menu icon-menu" ng-click="toggle();"></a>
 				<h2>今日一刻</h2>
 				<a href="javascript:;" class="search icon-search"></a>
 			</div>
 			<!-- 主体 -->
-			<div class="body">
+			<!-- <div class="body" ng-class="{collapse:left}"> -->
+			<div ng-class="{body:true,collapse:left}">
 				<div class="item">
 					<!-- 日期分类 -->
 					<div class="mark">13Aug</div>
@@ -154,6 +159,7 @@
 			</div>
 		</div>
 	</div>
-	<script src="./public/js/toggle.js"></script>
+	<!-- <script src="./public/js/toggle.js"></script> -->
 </body>
+
 </html>
